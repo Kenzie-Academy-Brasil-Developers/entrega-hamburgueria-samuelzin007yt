@@ -7,8 +7,9 @@ import { useEffect } from "react";
 import styles from "./homepages.module.scss";
 
 export const HomePage = () => {
+  const allProductsLocal = localStorage.getItem("@cartList");
   const [productList, setProductList] = useState([]);
-  const [cartList, setCartList] = useState([]);
+  const [cartList, setCartList] = useState(allProductsLocal ? JSON.parse(allProductsLocal) : []);
   const [isVisible, setIsVisible] = useState(false);
   const [search, setSearch] = useState("");
   const [value, setValue] = useState("");
@@ -54,6 +55,7 @@ export const HomePage = () => {
           <CartModal cartList={cartList} 
           setIsVisible={setIsVisible}
           setCartList={setCartList}
+          allProductsLocal={allProductsLocal}
            />
         ) : null}
       </main>

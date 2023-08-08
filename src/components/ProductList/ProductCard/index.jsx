@@ -1,5 +1,6 @@
 import { toast } from "react-toastify";
 import styles from "./products.module.scss";
+import { useEffect } from "react";
 
 export const ProductCard = ({
   product,
@@ -21,8 +22,11 @@ export const ProductCard = ({
     } else {
       setCartList([...cartList, {...product }]);
       toast("Item adicionado com sucesso")
-      localStorage.setItem("@cartList", JSON.stringify(cartList));
+      useEffect(() => {
+        localStorage.setItem("@cartList", JSON.stringify(cartList));
+      }, [cartList])
     }
+
   };
 
   return (

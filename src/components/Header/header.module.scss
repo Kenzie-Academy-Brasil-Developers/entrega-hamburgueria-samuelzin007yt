@@ -1,21 +1,20 @@
 .header__componet {
-  display: flex;
-  justify-content: center;
-  height: 3.125rem;
-  padding: 20px;
-  width: 100%;
-  background-color: var(--gray-0);
+    display: flex;
+    justify-content: center;
+    height: 5.125rem;
+    width: 100%;
+    background-color: var(--gray-0);
 
     img {
-      margin-left: 100px;
+      margin-left: 115px;
       height: 2rem;
-      margin-top: 12px;
+      margin-top: 25px;
     }
 
   .div__main {
     display: flex;
     justify-content: end;
-    margin-right: 253px;
+    margin-right: 250px;
     width: 100%;
     gap: 1.25rem;
 
@@ -38,6 +37,7 @@
 
   .form {
     margin-right: 42px;
+    margin-top: 13px;
 
     input {
       color: var(--gray-600);

@@ -16,6 +16,10 @@ export const CartModal = ({ cartList, setIsVisible, setCartList }) => {
     }
   }, [setCartList]);
 
+  useEffect(() => {
+    localStorage.setItem("@cartList", JSON.stringify(cartList));
+  }, [cartList]);
+
   return (
     <div role="dialog" className={styles.overlayBox}>
       <div className={styles.modalBox}>
@@ -56,6 +60,7 @@ export const CartModal = ({ cartList, setIsVisible, setCartList }) => {
               setCartList([]);
               toast("Todos os itens foram removidos!")
               localStorage.clear()
+              setIsVisible(false)
             }}
           >
             Remover todos

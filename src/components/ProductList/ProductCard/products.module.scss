@@ -59,3 +59,7 @@
     line-height: 14px;
   }
 }
+
+.list__products:hover {
+  border: 3px solid var(--color-secundary);
+}
