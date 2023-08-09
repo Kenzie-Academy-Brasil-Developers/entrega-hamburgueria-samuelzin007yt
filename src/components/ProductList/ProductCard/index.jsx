@@ -22,9 +22,6 @@ export const ProductCard = ({
     } else {
       setCartList([...cartList, {...product }]);
       toast("Item adicionado com sucesso")
-      useEffect(() => {
-        localStorage.setItem("@cartList", JSON.stringify(cartList));
-      }, [cartList])
     }
 
   };

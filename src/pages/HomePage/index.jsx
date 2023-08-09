@@ -26,6 +26,10 @@ export const HomePage = () => {
     getProductsList();
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("@cartList", JSON.stringify(cartList));
+  }, [cartList])
+
   // filtro de pesquisa
   const productsResults = productList.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase())
